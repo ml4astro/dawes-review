@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>The Dawes Review 10: The impact of deep learning for the
+        analysis of galaxy surveys</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="starter-template.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <div class="container">
+        <div class="row">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <span class="fs-2 text-center">The Dawes Review 10: The Impact of Deep Learning for the
+        Analysis of Galaxy Surveys</span>
+    </a>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col  text-center">
+            <a href="marc">Marc Huertas-Company</a><br>
+            <small class="text-muted">
+            Instituto de Astrofísica de Canarias<br>
+            Universidad de La Laguna<br>
+            LERMA, Observatoire de Paris, CNRS, PSL, Université de Paris-Cité<br>
+            </small>
+          </div>
+          <div class="col  text-center">
+            <a href="marc">Francois Lanusse</a><br>
+            <small class="text-muted">
+                AIM, CEA, CNRS, Université Paris-Saclay, Université Paris-Cité, Sorbonne Paris Cité
+                </small>
+          </div>
+        </div>
+        <br>
+        <div class="row text-center">
+            <div class="col">
+                <button type="button" class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16"> <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/> <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/> </svg> Paper</button>
+            </div>
+            <!-- <div class="col">
+                <button type="button" class="btn btn-outline-primary">Secondary</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-outline-primary">Secondary</button>
+            </div> -->
+          </div>
+        </div>
+  </header>
+
+  <main>
+    <h2>Abstract</h2>
+    <p class="">The amount and complexity of data delivered by modern galaxy surveys has been steadily increasing over the past years. New facilities will soon provide imaging and spectra of hundreds of millions of galaxies.  Extracting coherent scientific information from these large and multi-modal data sets remains an open issue for the community and data driven approaches such as deep learning have rapidly emerged as a potentially powerful solution to some long lasting challenges. This enthusiasm is reflected in an unprecedented exponential growth of publications using neural networks, which have gone from a handful of works in 2015 to an average of one paper per week in 2021 in the area of galaxy surveys. Half a decade after the first published work in astronomy mentioning deep learning, and shortly before new big-data sets such as Euclid and LSST start becoming available, we believe it is timely to review what has been the real impact of this new technology in the field and its potential to solve key challenges raised by the size and complexity of the new datasets. The purpose of this review is thus two-fold. We first aim at summarizing, in a common document, the main applications of deep learning for galaxy surveys that have emerged so far. We then extract the major achievements and lessons learned and highlight key open questions and limitations, which in our opinion, will require particular attention in the coming years. Overall, state-of-the art deep learning methods are rapidly adopted by the astronomical community, reflecting a democratization of these methods. This review shows that the majority of works using deep learning up to date are oriented to computer vision tasks (e.g. classification, segmentation). This is also the domain of application where deep learning has brought the most important breakthroughs so far. However, we also report that the applications are becoming more diverse and deep learning is used for estimating galaxy properties, identifying outliers or constraining the cosmological model. Most of these works remain at the exploratory level though which could partially explain the limited impact in terms of citations. Some common challenges will most likely need to be addressed before moving to the next phase of massive deployment of deep learning in the processing of future surveys; e.g. uncertainty quantification, interpretability, data labeling and domain shift issues from training with simulations, which constitutes a common practice in astronomy. 
+         </p>
+
+    <br>
+
+    <hr>
+    <h2>Structure of the review</h2>
+
+    We structure this review around four major categories: 
+    <ul>
+        <li><b>Deep learning for general computer vision tasks.</b> These are applications that we consider closest to standard computer vision applications for natural images for which deep learning has been shown to generally outperform other traditional approaches.  It typically includes classification and segmentation tasks.
+        </li>
+
+        <li><b>Deep learning to derive physical properties of galaxies.</b> These are applications in which deep learning is used to estimate galaxy properties such as photometric redshifts or stellar populations properties. Neural Networks are typically used to replace existing algorithms with a faster and more efficient solution, hence more suited for large data volumes. In addition, we also review applications in which deep learning is employed to derive properties of galaxies which are not directly accessible with known observables, i.e. to find new relations between observable quantities and physical properties of galaxies from simulations. 
+        </li>
+
+        <li><b>Deep learning for assisted discovery.</b> Neural networks are used here for data exploration and visualization of complex datasets in lower dimension. We include also in this category, efforts to automatically identify potentially interesting new objects, i.e. anomalies or outliers.
+        </li>
+
+        <li><b>Deep learning for cosmology.</b> Cosmological simulations including baryonic physics are computationally expensive. Deep learning can be used as a fast emulator of the galaxy-halo connection by populating dark matter halos. In addition, a second major application is cosmological inference. Cosmological models are traditionally constrained using summary statistics (e.g. 2 point statistics). Deep learning has been used to bypass these summary statistics and constrain models using all available data.  
+        </li>
+
+    </ul>
+
+
+    <hr>    
+    <div class="row g-5">
+        <div class="col-md-7">
+        <img src="Figure1.png" class="img-fluid" alt="Trend in ML papers">
+        </div>
+
+        <div class="col-md-5">
+            <h2>The Deep Learning Boom</h2>
+            <p>
+                The first published work mentioning deep learning in astronomy is from 2015 in which CNNs were applied for the classification of galaxy morphology. Since then, the number of works using deep learning in astrophysics has been growing exponentially, being the fastest growth of other topics in the field
+
+            </p>
+        </div>
+    </div>
+
+
+    <hr>    
+    <div class="row g-5">
+
+        <div class="col-md-7">
+            <h2>The Main Challenges</h2>
+            <p>
+                We explore what we think are some of the major challenges that deep learning works face and which need to be addressed in the coming years by the community based on the works reported in this review. Some of these challenges are not specific to the astronomical community and can benefit from solutions arising from the field of Machine Learning. However, in some cases, the requirements are more strict in astronomy.
+            </p>
+            <p>We provide elements of solutions already being explored by ongoing research in the field.</p>
+        </div>
+
+        <div class="col-md-5">
+            <br>
+            <ul>
+                <li>Small (and biased) labeled datasets</li>
+                <br>
+                <li>Uncertainty</li>
+                <br>
+                <li>Interpretability</li>
+                <br>
+                <li>Domain shift</li>
+                <br>
+                <li>Benchmarking</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <hr>
+    <h2>Paper</h2>
+    <br>
+    <p><b><a href="">The Dawes Review 10: The Impact of Deep Learning for the
+        Analysis of Galaxy Surveys</a></b><br>
+        Marc Huertas-Company, Francois Lanusse<br>
+        <i>PASA, in press, 2022</i><br>
+    </p>
+
+     <p>Citation:</p>
+    <pre>
+        @ARTICLE{MLReview2022,
+          title = {The Dawes Review 10: The Impact of Deep Learning for the
+            Analysis of Galaxy Surveys},
+          author = {Huertas-Company, Marc and Lanusse, Francois},
+          year = {2022}
+        }    
+    </pre>
+
+<!-- 
+    <hr class="col-3 col-md-2 mb-5">
+
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2>Starter projects</h2>
+        <p>Ready to beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>
+        <ul class="icon-list">
+          <li><a href="https://github.com/twbs/bootstrap-npm-starter" rel="noopener" target="_blank">Bootstrap npm starter</a></li>
+          <li class="text-muted">Bootstrap Parcel starter (coming soon!)</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Guides</h2>
+        <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+        <ul class="icon-list">
+          <li><a href="../getting-started/introduction/">Bootstrap quick start guide</a></li>
+          <li><a href="../getting-started/webpack/">Bootstrap Webpack guide</a></li>
+          <li><a href="../getting-started/parcel/">Bootstrap Parcel guide</a></li>
+          <li><a href="../getting-started/build-tools/">Contributing to Bootstrap</a></li>
+        </ul>
+      </div>
+    </div> -->
+  </main>
+
+  <footer class="pt-5 my-5 text-muted border-top">
+    <!-- Created by the Bootstrap team &middot; &copy; 2021 -->
+  </footer>
+</div>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+      
+  </body>
+</html>
